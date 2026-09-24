@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mangala Ustası</title>
+<meta name="description" content="Mangala Ustası: Türk kurallarıyla mangala. Bilgisayara karşı dört seviye, iki kişilik oyun, günün bulmacası. Destek ve gizlilik.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%239B3478%22%2F%3E%3Cpolygon%20points%3D%2232.0%2C8.0%2039.0%2C15.0%2049.0%2C15.0%2049.0%2C25.0%2056.0%2C32.0%2049.0%2C39.0%2049.0%2C49.0%2039.0%2C49.0%2032.0%2C56.0%2025.0%2C49.0%2015.0%2C49.0%2015.0%2C39.0%208.0%2C32.0%2015.0%2C25.0%2015.0%2C15.0%2025.0%2C15.0%22%20fill%3D%22%23fff%22%2F%3E%3Ccircle%20cx%3D%2232%22%20cy%3D%2233%22%20r%3D%227%22%20fill%3D%22%233B2B48%22%2F%3E%3C%2Fsvg%3E">
+<style>
+  @font-face { font-family: 'Outfit'; font-weight: 600; font-display: swap; src: url('fonts/outfit-600.ttf') format('truetype'); }
+  @font-face { font-family: 'Outfit'; font-weight: 700; font-display: swap; src: url('fonts/outfit-700.ttf') format('truetype'); }
+  @font-face { font-family: 'Instrument Sans'; font-weight: 400; font-display: swap; src: url('fonts/instrument-400.ttf') format('truetype'); }
+  @font-face { font-family: 'Instrument Sans'; font-weight: 500; font-display: swap; src: url('fonts/instrument-500.ttf') format('truetype'); }
+  @font-face { font-family: 'Instrument Sans'; font-weight: 600; font-display: swap; src: url('fonts/instrument-600.ttf') format('truetype'); }
+  :root { --bg:#F4F2F7; --board:#FFFFFF; --pit:#F1EDF5; --pit-top:#E4DDEC; --ink:#211A2B; --soft:#5E5569; --faint:#978DA3; --accent:#9B3478; --accent-soft:#F4E4EF; --stone:#3B2B48; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#151019; --board:#1E1824; --pit:#2A2333; --pit-top:#1D1724; --ink:#F3EEF7; --soft:#BDB3C9; --faint:#8A8096; --accent:#E27FBF; --accent-soft:#3E2438; --stone:#DCD2E8; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; min-height: 100vh; background: var(--bg) url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2256%22%20height%3D%2256%22%20viewBox%3D%220%200%2056%2056%22%3E%3Cpolygon%20points%3D%220.0%2C-20.0%205.9%2C-14.1%2014.1%2C-14.1%2014.1%2C-5.9%2020.0%2C0.0%2014.1%2C5.9%2014.1%2C14.1%205.9%2C14.1%200.0%2C20.0%20-5.9%2C14.1%20-14.1%2C14.1%20-14.1%2C5.9%20-20.0%2C0.0%20-14.1%2C-5.9%20-14.1%2C-14.1%20-5.9%2C-14.1%22%20fill%3D%22none%22%20stroke%3D%22%239B3478%22%20stroke-opacity%3D%22.08%22%20stroke-width%3D%221%22%2F%3E%3Cpolygon%20points%3D%2256.0%2C-20.0%2061.9%2C-14.1%2070.1%2C-14.1%2070.1%2C-5.9%2076.0%2C0.0%2070.1%2C5.9%2070.1%2C14.1%2061.9%2C14.1%2056.0%2C20.0%2050.1%2C14.1%2041.9%2C14.1%2041.9%2C5.9%2036.0%2C0.0%2041.9%2C-5.9%2041.9%2C-14.1%2050.1%2C-14.1%22%20fill%3D%22none%22%20stroke%3D%22%239B3478%22%20stroke-opacity%3D%22.08%22%20stroke-width%3D%221%22%2F%3E%3Cpolygon%20points%3D%220.0%2C36.0%205.9%2C41.9%2014.1%2C41.9%2014.1%2C50.1%2020.0%2C56.0%2014.1%2C61.9%2014.1%2C70.1%205.9%2C70.1%200.0%2C76.0%20-5.9%2C70.1%20-14.1%2C70.1%20-14.1%2C61.9%20-20.0%2C56.0%20-14.1%2C50.1%20-14.1%2C41.9%20-5.9%2C41.9%22%20fill%3D%22none%22%20stroke%3D%22%239B3478%22%20stroke-opacity%3D%22.08%22%20stroke-width%3D%221%22%2F%3E%3Cpolygon%20points%3D%2256.0%2C36.0%2061.9%2C41.9%2070.1%2C41.9%2070.1%2C50.1%2076.0%2C56.0%2070.1%2C61.9%2070.1%2C70.1%2061.9%2C70.1%2056.0%2C76.0%2050.1%2C70.1%2041.9%2C70.1%2041.9%2C61.9%2036.0%2C56.0%2041.9%2C50.1%2041.9%2C41.9%2050.1%2C41.9%22%20fill%3D%22none%22%20stroke%3D%22%239B3478%22%20stroke-opacity%3D%22.08%22%20stroke-width%3D%221%22%2F%3E%3Cpolygon%20points%3D%2228%2C21%2035%2C28%2028%2C35%2021%2C28%22%20fill%3D%22none%22%20stroke%3D%22%239B3478%22%20stroke-opacity%3D%22.08%22%20stroke-width%3D%221%22%2F%3E%3C%2Fsvg%3E") repeat; color: var(--ink);
+    font: 400 17px/1.6 'Instrument Sans', system-ui, sans-serif; }
+  main { max-width: 440px; margin: 0 auto; padding: 36px 16px 48px; }
+  .board { background: var(--board); border-radius: 34px; padding: 12px; box-shadow: 0 18px 44px rgba(42, 24, 56, .12); }
+  @media (prefers-color-scheme: dark) { .board { box-shadow: none; border: 1px solid #302838; } }
+  .treasure { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 26px;
+    background: linear-gradient(var(--pit-top), var(--pit) 42%); }
+  .treasure.far { border: 2px solid var(--accent); }
+  .icon { flex: none; border-radius: 18px; }
+  h1 { margin: 0; font: 700 32px/1.05 'Outfit', system-ui, sans-serif; letter-spacing: -.5px; }
+  .tag { margin: 4px 0 0; color: var(--soft); font-size: 15px; line-height: 1.45; }
+  .pit { margin-top: 8px; padding: 16px 20px 18px; border-radius: 26px; background: linear-gradient(var(--pit-top), var(--pit) 42%); }
+  .pit h2 { display: flex; align-items: center; gap: 10px; margin: 0; font: 600 19px/1.3 'Outfit', system-ui, sans-serif; }
+  .pit h2 b { font: 700 22px/1 'Outfit', system-ui, sans-serif; color: var(--accent); min-width: 18px; }
+  .pit p { margin: 6px 0 0; color: var(--soft); }
+  .stones { display: inline-flex; gap: 4px; margin-left: auto; }
+  .stones i { width: 9px; height: 9px; border-radius: 50%; background: var(--stone); display: block; }
+  a { color: var(--accent); font-weight: 600; text-underline-offset: 3px; }
+  .mail { display: inline-block; margin-top: 10px; padding: 10px 16px; border-radius: 999px; background: var(--accent); color: #fff; text-decoration: none; }
+  @media (prefers-color-scheme: dark) { .mail { color: #1C0F19; } }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+  .near { margin-top: 8px; justify-content: center; color: var(--faint); font-size: 14px; }
+  .near svg { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+<div class="board">
+  <header class="treasure far">
+    <svg class="icon" width="68" height="68" viewBox="0 0 1024 1024" role="img" aria-label="Mangala Ustası simgesi"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#AE4189"/><stop offset="1" stop-color="#86296A"/></linearGradient><linearGradient id="k" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E6C9DC"/><stop offset=".55" stop-color="#F6E9F2"/></linearGradient></defs><rect width="1024" height="1024" rx="228" fill="url(#g)"/><polygon points="512.0,120.0 626.8,234.8 789.2,234.8 789.2,397.2 904.0,512.0 789.2,626.8 789.2,789.2 626.8,789.2 512.0,904.0 397.2,789.2 234.8,789.2 234.8,626.8 120.0,512.0 234.8,397.2 234.8,234.8 397.2,234.8" fill="#fff" stroke="#fff" stroke-width="28" stroke-linejoin="round"/><ellipse cx="512" cy="520" rx="205" ry="158" fill="url(#k)"/><circle cx="432" cy="530" r="46" fill="#3B2B48"/><circle cx="417" cy="513" r="12.5" fill="#fff" fill-opacity=".5"/><circle cx="592" cy="530" r="46" fill="#3B2B48"/><circle cx="577" cy="513" r="12.5" fill="#fff" fill-opacity=".5"/><circle cx="512" cy="468" r="46" fill="#3B2B48"/><circle cx="497" cy="451" r="12.5" fill="#fff" fill-opacity=".5"/><circle cx="512" cy="592" r="46" fill="#3B2B48"/><circle cx="497" cy="575" r="12.5" fill="#fff" fill-opacity=".5"/></svg>
+    <div>
+      <h1>Mangala Ustası</h1>
+      <p class="tag">Türk kurallarıyla mangala: bilgisayara karşı dört seviye, aynı telefonda iki kişi ve her gün yeni bir bulmaca. İnternet olmadan oynanır.</p>
+    </div>
+  </header>
+
+  <section class="pit" aria-labelledby="kurallar">
+    <h2 id="kurallar"><b>1</b> Tahtadaki kurallar <span class="stones" aria-hidden="true"><i></i><i></i><i></i><i></i></span></h2>
+    <p>Oyun, Tüm Akıl ve Zekâ Oyunları Federasyonu'nun okul turnuvası metnine göre işler. Aldığın taşların ilki aynı kuyuya düşer, çift yapan son taş kuyuyu kazandırır, boş kuyuya düşen son taş karşıdakileri toplar, tarafı ilk boşalan da kalanları alır.</p>
+  </section>
+
+  <section class="pit" aria-labelledby="yaz">
+    <h2 id="yaz"><b>2</b> Bir sorun ya da kural itirazı <span class="stones" aria-hidden="true"><i></i><i></i><i></i><i></i></span></h2>
+    <p>Hatalı gördüğün bir hamle, anlaşılmayan bir kural ya da bir öneri için yaz. Telefonunun modelini ve Ayarlar'ın altındaki sürüm numarasını eklersen daha hızlı bakarız.</p>
+    <a class="mail" href="mailto:fellasontheway@gmail.com?subject=Mangala%20Usta%C4%B1">fellasontheway@gmail.com</a>
+  </section>
+
+  <section class="pit" aria-labelledby="gizlilik">
+    <h2 id="gizlilik"><b>3</b> Veriler ve gizlilik <span class="stones" aria-hidden="true"><i></i><i></i><i></i><i></i></span></h2>
+    <p>Setlerin, bulmaca serin ve ayarların telefonunun içinde kalır. Reklamları Google AdMob gösterir; hangi bilgiyi işlediği ve izinlerini nasıl değiştireceğin ayrıntılarıyla anlatılıyor:</p>
+    <p><a href="gizlilik.html">Gizlilik politikasını oku</a></p>
+  </section>
+
+  <footer class="treasure near"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><polygon points="9.0,1.5 11.2,3.7 14.3,3.7 14.3,6.8 16.5,9.0 14.3,11.2 14.3,14.3 11.2,14.3 9.0,16.5 6.8,14.3 3.7,14.3 3.7,11.2 1.5,9.0 3.7,6.8 3.7,3.7 6.8,3.7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg> AppFellas · 2026</footer>
+</div>
+</main>
+</body>
+</html>
